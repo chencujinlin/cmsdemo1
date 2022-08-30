@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const App = () => {
     return (
         <div>
-            <Button type="primary"> primary</Button>
+            
             <Outlet />
         </div>
     )
