@@ -1,27 +1,27 @@
 import React from "react";
 import "./assets/base.less"
-import { Outlet } from "react-router-dom";
-import { Layout } from 'antd';
-import logoImg from './assets/logo.png'
+import {Outlet} from "react-router-dom";
+import {Layout} from 'antd';
 
-const App = () => {
-    const { Sider, Content } = Layout;
+import Header from "./components/Header";
+import Asider from "./components/Aside"
+import Bread from "./components/Bread"
+
+
+export default function App() {
     return (
-        
         <Layout id='app'>
-        
-        <header>
-        <img src={logoImg} alt=""  className="logo"/></header>
-        <Layout>
-            <Sider>Sider</Sider>
-            <Content>
-            <div>
-                <Outlet/>
+            <Header/>
+            <div className='container'>
+                <Asider />
+                <div className='container_box'>
+                    <Bread/>
+                    <div className="container_content">
+                        <Outlet />
+                    </div>
+                </div>
             </div>
-            </Content>
-            </Layout>
-            <footer>Respect | Copyrigt | 2022 Author @chncu</footer>
+            <footer>Respect | Copyright &copy; 2022 Author chencu</footer>
         </Layout>
     )
 }
-export default App;
